@@ -64,15 +64,48 @@
 
   </div>
 
+  <script type="text/javascript">
+
+    $('#clear').on('click', () => {
+      alert("Clearing...")
+      $.post('/api/clear').then(() => {
+        $('#tableList').empty()
+        $('#waitList').empty()
+      })
+      window.location.reload(false)
+    })
+
+    $.get('/api/tables', (data) => {
+      for (var i = 0; i < data.length; i++) {
+        var tableList = $('#tableList')
+        var item = $('<li class=\'list-group-item mt-4\'>')
+        item.append(
+          $('<h2>').text('Mesa #' + (i + 1)),
+          $('<hr>'),
+          $('<h4>').text('Nombre: ' + data[i].name),
+          $('<h4>').text('Email: ' + data[i].email),
+          $('<h4>').text('Teléfono: ' + data[i].phone)
+        )
+        tableList.append(item)
+      }
+    })
+
+    $.get('/api/waitlist', (data) => {
+      for (var i = 0; i < data.length; i++) {
+        var waitList = $('#waitList')
+        var item = $('<li class=\'list-group-item mt-4\'>')
+        item.append(
+          $('<h2>').text('Mesa #' + (i + 6)),
+          $('<hr>'),
+          $('<h4>').text('Nombre: ' + data[i].name),
+          $('<h4>').text('Email: ' + data[i].email),
+          $('<h4>').text('Teléfono: ' + data[i].phone)
+        )
+        waitList.append(item)
+      }
+    })
+
+  </script>
+
 </body>
-
-
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
-<script type="text/javascript">
-
-
-
-
-</script>
-
 </html>

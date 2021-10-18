@@ -1,0 +1,23 @@
+{
+  "name": "web-lab-8",
+  "version": "1.0.0",
+  "description": "Laboratorio #8 para el curso de Desarrollo de Aplicaciones Web TC2026.8.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OUMontiel/web-lab-8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OUMontiel/web-lab-8/issues"
+  },
+  "homepage": "https://github.com/OUMontiel/web-lab-8#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
