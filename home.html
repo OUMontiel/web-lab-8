@@ -37,7 +37,7 @@
   </div>
 
   <script type='text/javascript'>
-    $.get('/api/reservations', (data) => {
+    $.get('/api/tables', (data) => {
       $('#MesasDisponibles').text(5 - data.length)
     })
   </script>
